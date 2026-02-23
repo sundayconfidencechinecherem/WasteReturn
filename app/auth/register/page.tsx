@@ -1,20 +1,19 @@
+// app/auth/register/page.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { toast } from 'react-hot-toast';
-import { ArrowLeftIcon, GiftIcon } from 'lucide-react';
+import { ArrowLeftIcon } from 'lucide-react';
 
 export default function RegisterPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState(1);
-  const [referralCode, setReferralCode] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
@@ -24,35 +23,6 @@ export default function RegisterPage() {
     address: '',
     preferredContact: 'whatsapp' as 'sms' | 'whatsapp' | 'both',
   });
-
-  // Check for referral code in URL or cookies
-  useEffect(() => {
-    // Check URL first
-    const refFromUrl = searchParams.get('ref');
-    
-    // Then check cookies
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-      const [key, value] = cookie.trim().split('=');
-      acc[key] = value;
-      return acc;
-    }, {} as Record<string, string>);
-    
-    const refFromCookie = cookies['referral_code_client'];
-    
-    // Use URL param first, then cookie
-    const ref = refFromUrl || refFromCookie;
-    
-    if (ref) {
-      setReferralCode(ref);
-      toast.success(`🎉 You were referred by code: ${ref}`, {
-        duration: 5000,
-        icon: '🎁',
-      });
-      
-      // Clear the cookie after reading
-      document.cookie = 'referral_code_client=; max-age=0; path=/';
-    }
-  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,11 +42,7 @@ export default function RegisterPage() {
     // Simulate API call - replace with actual registration
     setTimeout(() => {
       setIsLoading(false);
-      toast.success(
-        referralCode 
-          ? 'Registration successful! Referrer will get bonus points after your first pickup!' 
-          : 'Registration successful!'
-      );
+      toast.success('Registration successful!');
       router.push('/user/dashboard');
     }, 1500);
   };
@@ -99,20 +65,6 @@ export default function RegisterPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {/* Referral Banner - Shows if there's a referral code */}
-          {referralCode && step === 1 && (
-            <div className="mb-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white p-4 rounded-lg">
-              <div className="flex items-center gap-3">
-                <GiftIcon className="w-6 h-6" />
-                <div>
-                  <p className="font-medium">You were referred by someone!</p>
-                  <p className="text-sm opacity-90">Code: <span className="font-bold">{referralCode}</span></p>
-                  <p className="text-xs mt-1">You'll both get bonus points after your first pickup</p>
-                </div>
-              </div>
-            </div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-4">
             {step === 1 ? (
               <>
@@ -178,11 +130,6 @@ export default function RegisterPage() {
                     required
                   />
                 </div>
-
-                {/* Hidden field to pass referral code to backend */}
-                {referralCode && (
-                  <input type="hidden" name="referralCode" value={referralCode} />
-                )}
               </>
             ) : (
               <>
