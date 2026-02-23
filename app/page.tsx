@@ -167,7 +167,7 @@ export default function HomePage() {
             Join thousands of households already turning their waste into value.
           </p>
           <Link 
-            href="/register" 
+            href="/auth/register" 
             className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-gray-900 rounded-full font-semibold text-lg hover:bg-[#FFC800] transition"
           >
             Create Your Account
