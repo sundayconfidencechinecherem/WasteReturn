@@ -20,7 +20,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WasteReturn - Every Waste Has Value",
+  title: "TrashEarn - Every Waste Has Value",
   description: "Comprehensive waste management and recycling platform. Sort right, earn more.",
   keywords: "recycling, waste management, points, rewards, environment",
 };

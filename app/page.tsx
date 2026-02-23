@@ -16,7 +16,7 @@ export default function HomePage() {
       <section className="bg-linear-to-br from-[#1976D2] to-[#0D47A1] text-white">
         <div className="container mx-auto px-4 py-20">
           <nav className="flex justify-between items-center mb-16">
-            <div className="text-2xl font-bold font-display">WasteReturn</div>
+            <div className="text-2xl font-bold font-display">TrashEarn</div>
             <div className="space-x-4">
               <Link href="/auth/login" className="px-4 py-2 text-white hover:text-gray-200 transition">
                 Login
@@ -181,7 +181,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">WasteReturn</h3>
+              <h3 className="text-xl font-bold mb-4">TrashEarn</h3>
               <p className="text-gray-400 text-sm">
                 Every waste has value. Sort right, earn more.
               </p>
@@ -213,7 +213,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-            © 2025 WasteReturn. All rights reserved.
+            © 2025 TrashEarn. All rights reserved.
           </div>
         </div>
       </footer>
