@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+@theme {
+  /* Category Colors - From Design System */
+  --color-recyclable: #1976D2;
+  --color-organic: #2E7D32;
+  --color-hazardous: #C62828;
+  --color-residual: #757575;
+  --color-electronic: #7B1FA2;
+  
+  /* Material Type Colors */
+  --color-plastic: #00796B;
+  --color-paper: #FF8F00;
+  --color-glass: #00ACC1;
+  --color-metal: #F57C00;
+  
+  /* Points & Status Colors */
+  --color-points-high: #2E7D32;
+  --color-points-medium: #4CAF50;
+  --color-points-low: #FFC107;
+  --color-bonus: #9C27B0;
+  --color-deduction: #D32F2F;
+  --color-info: #1976D2;
+  
+  /* Sorting Quality Levels */
+  --color-gold: #FFD700;
+  --color-silver: #C0C0C0;
+  --color-bronze: #CD7F32;
+  --color-mixed: #9E9E9E;
+  --color-contaminated: #D32F2F;
+}
+
+@layer base {
+  * {
+    border-color: #e5e7eb;
+  }
+  
+  body {
+    background-color: #f9fafb;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Typography */
+  .display-large {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 800;
+  }
+  
+  .display-medium {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+  }
+  
+  .display-small {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+  
+  /* Points Display */
+  .points-high {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 800;
+    color: #2E7D32;
+  }
+  
+  .points-medium {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+  }
+  
+  .points-low {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    color: #FFC107;
+  }
+  
+  /* Category Badges */
+  .badge-recyclable {
+    background-color: #1976D2;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .badge-organic {
+    background-color: #2E7D32;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .badge-hazardous {
+    background-color: #C62828;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .badge-electronic {
+    background-color: #7B1FA2;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .badge-residual {
+    background-color: #757575;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Sorting Quality Badges */
+  .quality-gold {
+    background-color: #FFD700;
+    color: black;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .quality-silver {
+    background-color: #C0C0C0;
+    color: black;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .quality-bronze {
+    background-color: #CD7F32;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .quality-mixed {
+    background-color: #9E9E9E;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .quality-contaminated {
+    background-color: #D32F2F;
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Cards */
+  .stat-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    padding: 1.5rem;
+    border: 1px solid #f3f4f6;
+  }
+  
+  .dashboard-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+  }
+  
+  /* Progress */
+  .progress-bar {
+    height: 0.5rem;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: #1976D2;
+    border-radius: 9999px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  /* Driver App Specific */
+  .scale-reading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-family: var(--font-roboto-mono), monospace;
+    background-color: #f3f4f6;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .pickup-item {
+    border-left-width: 4px;
+    border-left-color: transparent;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  
+  .pickup-item:hover {
+    border-left-color: #1976D2;
+  }
+}
+
+/* Custom animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hide scrollbar for mobile nav */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Container utility if not provided by Tailwind */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
