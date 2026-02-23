@@ -40,7 +40,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                href="/register" 
+                href="/auth/register" 
                 className="px-8 py-4 bg-gold text-gray-900 rounded-full font-semibold text-lg hover:bg-[#FFC800] transition flex items-center justify-center gap-2"
               >
                 Start Earning Today
@@ -149,7 +149,7 @@ export default function HomePage() {
           
           <div className="text-center mt-12">
             <Link 
-              href="/register" 
+              href="/auth/register" 
               className="inline-flex items-center gap-2 text-[#1976D2] font-semibold hover:underline"
             >
               See all waste categories
